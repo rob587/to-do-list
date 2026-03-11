@@ -1,9 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import DefaultLayout from "../layout/DefaultLayout";
 import Homepage from "./pages/Homepage";
-
-import AddTask from "./components/AddTask";
-
 function App() {
   return (
     <>

@@ -16,12 +16,41 @@ const Homepage = () => {
     return true;
   });
 
+  const toggleTask = (id) => {
+    setTasks(
+      tasks.map((task) =>
+        task.id === id ? { ...task, completed: !task.completed } : task,
+      ),
+    );
+  };
+
   return (
     <>
+      <button
+        onClick={() => {
+          setFilter("all");
+        }}
+      >
+        Tutti
+      </button>
+      <button
+        onClick={() => {
+          setFilter("active");
+        }}
+      >
+        Non Completati
+      </button>
+      <button
+        onClick={() => {
+          setFilter("completed");
+        }}
+      >
+        Completati
+      </button>
       <ul>
         {visibleTasks.map((task) => {
           return (
-            <li key={task.id}>
+            <li key={task.id} onClick={() => toggleTask(task.id)}>
               {task.text}, status:{" "}
               {task.completed ? "Completato" : "Non completato"}
             </li>
