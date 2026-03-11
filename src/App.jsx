@@ -9,10 +9,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<DefaultLayout />}>
-            <Route index element={<Homepage />} />
-            <Route path="add-task" element={<AddTask />} />
-          </Route>
+          <Route index element={<Homepage />} />
         </Routes>
       </BrowserRouter>
     </>

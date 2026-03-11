@@ -3,11 +3,11 @@ const Homepage = () => {
   const [filter, setFilter] = useState("all");
 
   const [tasks, setTasks] = useState([
-    { id: 1, text: "Studiare React", stato: "Non completato" },
-    { id: 2, text: "Fare la spesa", stato: "Completato" },
-    { id: 3, text: "Allenarsi", stato: "Non completato" },
-    { id: 4, text: "Leggere un articolo su JavaScript", stato: "Completato" },
-    { id: 5, text: "Rivedere i CSS Flexbox", stato: "Completato" },
+    { id: 1, text: "Studiare React", completed: true },
+    { id: 2, text: "Fare la spesa", completed: true },
+    { id: 3, text: "Allenarsi", completed: false },
+    { id: 4, text: "Leggere un articolo su JavaScript", completed: true },
+    { id: 5, text: "Rivedere i CSS Flexbox", completed: false },
   ]);
 
   const visibleTasks = tasks.filter((task) => {
@@ -22,7 +22,8 @@ const Homepage = () => {
         {visibleTasks.map((task) => {
           return (
             <li key={task.id}>
-              {task.text}, status: {task.stato}
+              {task.text}, status:{" "}
+              {task.completed ? "Completato" : "Non completato"}
             </li>
           );
         })}
